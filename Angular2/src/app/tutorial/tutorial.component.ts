@@ -9,4 +9,9 @@ export class TutorialComponent {
     // interpolation
     title = 'abc';
 
+    showLineIf = true;
+
+    color = 'blue';
+
+    list: string[] = ['red', 'green', 'blue']
 }

@@ -1,5 +1,14 @@
 <h2> hello moto {{title}}</h2>
-<input type="text" [(ngModel)]="fname" />
-<input type="text" [(ngModel)]="lname" />
-<br/>
-full name: {{fname}} {{lname}}
+<h3 *ngIf="showLineIf"> this is ngIf directive line </h3>
+
+<div class="form-group" [ngSwitch]="color">
+    
+    <p *ngSwitchCase="'red'">this is collor red</p>
+    <p *ngSwitchCase="'blue'">this is collor blue</p>
+    <p *ngSwitchCase="'green'">this is collor green</p>
+    <p *ngSwitchDefault>this is collor invalid</p>
+</div>
+
+<ul>
+    <li *ngFor="let item of list">{{item}}</li>
+</ul>
