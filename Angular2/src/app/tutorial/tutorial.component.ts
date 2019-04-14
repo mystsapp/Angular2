@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component ({
     // tslint:disable-next-line:component-selector
@@ -8,17 +8,21 @@ import { Component } from '@angular/core';
 
 })
 export class TutorialComponent {
+    @Input() name: string;
+    @Output() onVote = new EventEmitter<boolean>();
+
     // interpolation
     title = 'abc';
 
-    private cone = true;
-    private ctwo = true;
+    public voted = false;
 
-    private style = 'italic';
-    private size = '60px';
 
-    toggleClass() {
-        this.cone = !this.cone;
-        this.ctwo = !this.ctwo;
+    SetName(name: string) {
+        this.name = name;
+    }
+
+    Vote(agree: boolean) {
+        this.voted = true;
+        this.onVote.emit(agree);
     }
 }

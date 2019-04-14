@@ -4,7 +4,10 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<h2>Here are some links to help you start: </h2>
-<my-tutorial></my-tutorial>
+<input type="text" #textName (keyup)="0" />
+
+<p>Agree: {{agree}}, Disgree: {{disgree}}</p>
+<button (click)="ChangeName()">Change Name</button>
+<my-tutorial *ngFor="let person of names" [name]="person" (onVote)="parentVote($event)"></my-tutorial>
 
 <router-outlet></router-outlet>
