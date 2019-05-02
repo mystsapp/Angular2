@@ -1,13 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title | uppercase }}!
   </h1>
 </div>
-<input type="text" #textName (keyup)="0" />
 
-<p>Agree: {{agree}}, Disgree: {{disgree}}</p>
-<button (click)="ChangeName()">Change Name</button>
-<my-tutorial *ngFor="let person of names" [name]="person" (onVote)="parentVote($event)"></my-tutorial>
+<my-tutorial ></my-tutorial>
 
 <router-outlet></router-outlet>

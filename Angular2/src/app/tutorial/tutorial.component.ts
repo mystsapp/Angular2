@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component ({
     // tslint:disable-next-line:component-selector
@@ -8,21 +8,19 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 })
 export class TutorialComponent {
-    @Input() name: string;
-    @Output() onVote = new EventEmitter<boolean>();
 
     // interpolation
     title = 'abc';
+    today = Date.now();
 
-    public voted = false;
+    a = 0.259;
+    b = 1.3495;
 
+    pi = 3.14;
+  e = 2.718281828459045;
 
-    SetName(name: string) {
-        this.name = name;
-    }
+  // tslint:disable-next-line:ban-types
+  object: Object = {foo: 'bar', baz: 'qux', nested: {xyz: 3, numbers: [1, 2, 3, 4, 5]}};
 
-    Vote(agree: boolean) {
-        this.voted = true;
-        this.onVote.emit(agree);
-    }
+  str = 'abcdefghij';
 }
