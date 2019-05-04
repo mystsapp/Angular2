@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular2';
 
+  cities = [{id: 1, name: 'HaNoi'}, {id: 2, name: 'HCM'}];
+
   onSubmit(value: any){
     console.log(value);
   }
