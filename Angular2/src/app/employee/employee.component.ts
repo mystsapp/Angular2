@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../_services/employee.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-employee',
@@ -8,9 +9,15 @@ import { EmployeeService } from '../_services/employee.service';
 })
 export class EmployeeComponent implements OnInit {
   employees: any[];
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService, private alertifyService: AlertifyService) {}
 
   ngOnInit() {
-    this.employees = this.employeeService.getList();
+    this.employeeService.getList().subscribe(data => {
+      this.employees = data;
+      console.log(data);
+    }, error => {
+       this.alertifyService.error('Load data failure');
+      // console.log(error);
+    });
   }
 }

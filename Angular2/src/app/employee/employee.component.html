@@ -1,3 +1,20 @@
-<ul>
-  <li *ngFor="let employee of employees">{{employee.name}}</li>
-</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Create At</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.id}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.age}}</td>
+      <td>{{employee.createdAt | date}}</td>
+      <td>{{employee.status}}</td>
+    </tr>
+  </tbody>
+</table>

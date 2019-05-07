@@ -1,22 +1,25 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+// import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-constructor() { }
+  apiUrl = 'http://5cce6daa9eb94f0014c4825b.mockapi.io/api/Employee';
+  constructor(private http: HttpClient) { }
 
-employees = [
-  {id: 1, name: 'Nguyen Van A'},
-  {id: 1, name: 'Nguyen Van B'},
-  {id: 2, name: 'Nguyen Van C'},
-  {id: 1, name: 'Nguyen Van D'},
-  {id: 1, name: 'Nguyen Van E'}
-];
+  // getList() {
+  //   return this.http.get(this.apiUrl).pipe(map(data => { })).subscribe(result => {
+  //     console.log(result);
+  //   });
+  // }
 
-getList() {
-  return this.employees;
-}
+  getList(): Observable<any> {
+    return this.http.get(this.apiUrl);
+  }
 
 }
