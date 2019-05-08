@@ -9,18 +9,25 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeService } from './_services/employee.service';
 import { AlertifyService } from './_services/alertify.service';
+import { HomeComponent } from './home/home.component';
+import { appRoutes } from './routes';
+import { RouterModule } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       TutorialComponent,
-      EmployeeComponent
+      EmployeeComponent,
+      HomeComponent,
+      NavComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       AppRoutingModule,
-      FormsModule
+      FormsModule,
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       EmployeeService,
