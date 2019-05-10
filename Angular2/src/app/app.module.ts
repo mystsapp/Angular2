@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { NotFoundComponent } from './NotFound/NotFound.component';
 
 @NgModule({
    declarations: [
@@ -20,7 +22,9 @@ import { NavComponent } from './nav/nav.component';
       TutorialComponent,
       EmployeeComponent,
       HomeComponent,
-      NavComponent
+      NavComponent,
+      FooterComponent,
+      NotFoundComponent
    ],
    imports: [
       BrowserModule,
