@@ -15,6 +15,9 @@ import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './NotFound/NotFound.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeDetailResolver } from './_resolvers/employee.resolver';
+import { EmployeeListResolver } from './_resolvers/employee-list.resolver';
 
 @NgModule({
    declarations: [
@@ -24,7 +27,8 @@ import { NotFoundComponent } from './NotFound/NotFound.component';
       HomeComponent,
       NavComponent,
       FooterComponent,
-      NotFoundComponent
+      NotFoundComponent,
+      EmployeeDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -35,7 +39,9 @@ import { NotFoundComponent } from './NotFound/NotFound.component';
    ],
    providers: [
       EmployeeService,
-      AlertifyService
+      AlertifyService,
+      EmployeeDetailResolver,
+      EmployeeListResolver
    ],
    bootstrap: [
       AppComponent

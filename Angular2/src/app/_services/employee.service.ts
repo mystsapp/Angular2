@@ -22,4 +22,8 @@ export class EmployeeService {
     return this.http.get(this.apiUrl);
   }
 
+  getEmployee(id): Observable<any> {
+    return this.http.get(this.apiUrl + '/' + id);
+  }
+
 }
