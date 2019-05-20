@@ -18,6 +18,8 @@ import { NotFoundComponent } from './NotFound/NotFound.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeDetailResolver } from './_resolvers/employee.resolver';
 import { EmployeeListResolver } from './_resolvers/employee-list.resolver';
+import { EmployeeOverviewComponent } from './employee-overview/employee-overview.component';
+import { EmployeeProjectComponent } from './employee-project/employee-project.component';
 
 @NgModule({
    declarations: [
@@ -28,7 +30,9 @@ import { EmployeeListResolver } from './_resolvers/employee-list.resolver';
       NavComponent,
       FooterComponent,
       NotFoundComponent,
-      EmployeeDetailComponent
+      EmployeeDetailComponent,
+      EmployeeOverviewComponent,
+      EmployeeProjectComponent
    ],
    imports: [
       BrowserModule,

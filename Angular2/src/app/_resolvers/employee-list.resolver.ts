@@ -17,6 +17,6 @@ export class EmployeeListResolver {
                 this.router.navigate(['/home']);
                 return of(null);
             })
-        )
+        );
     }
 }

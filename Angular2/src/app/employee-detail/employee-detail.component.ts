@@ -30,8 +30,8 @@ export class EmployeeDetailComponent implements OnInit, OnDestroy {
     // });
     this.activatedRoute.data.subscribe(data => {
       this.employee = data.employee;
-    })
-  
+    });
+
   }
 
   // getEmployee() {
