@@ -7,6 +7,9 @@ import { EmployeeDetailResolver } from './_resolvers/employee.resolver';
 import { EmployeeListResolver } from './_resolvers/employee-list.resolver';
 import { EmployeeOverviewComponent } from './employee-overview/employee-overview.component';
 import { EmployeeProjectComponent } from './employee-project/employee-project.component';
+import { LoginComponent } from './login/login.component';
+import { CheckLoginGuard } from './_guards/check-login.guard';
+import { CheckSaveFormGuard } from './_guards/check-save-form.guard';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +19,11 @@ export const appRoutes: Routes = [
       {
         path: 'employees',
         component: EmployeeComponent,
-        resolve: { employees: EmployeeListResolver }
+        resolve: { employees: EmployeeListResolver }, canActivate: [CheckLoginGuard]
+      },
+      {
+        path: 'login',
+        component: LoginComponent
       },
       {
         path: 'employees/:id',
@@ -26,7 +33,8 @@ export const appRoutes: Routes = [
           {path: '', redirectTo: '', pathMatch: 'full'},
           { path: 'overview', component: EmployeeOverviewComponent },
           { path: 'projects', component: EmployeeProjectComponent }
-        ]
+        ],
+        canDeactivate: [CheckSaveFormGuard]
       }
     ]
   },

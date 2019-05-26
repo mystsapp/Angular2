@@ -20,6 +20,10 @@ import { EmployeeDetailResolver } from './_resolvers/employee.resolver';
 import { EmployeeListResolver } from './_resolvers/employee-list.resolver';
 import { EmployeeOverviewComponent } from './employee-overview/employee-overview.component';
 import { EmployeeProjectComponent } from './employee-project/employee-project.component';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './_services/login.service';
+import { CheckLoginGuard } from './_guards/check-login.guard';
+import { CheckSaveFormGuard } from './_guards/check-save-form.guard';
 
 @NgModule({
    declarations: [
@@ -32,7 +36,8 @@ import { EmployeeProjectComponent } from './employee-project/employee-project.co
       NotFoundComponent,
       EmployeeDetailComponent,
       EmployeeOverviewComponent,
-      EmployeeProjectComponent
+      EmployeeProjectComponent,
+      LoginComponent
    ],
    imports: [
       BrowserModule,
@@ -45,7 +50,10 @@ import { EmployeeProjectComponent } from './employee-project/employee-project.co
       EmployeeService,
       AlertifyService,
       EmployeeDetailResolver,
-      EmployeeListResolver
+      EmployeeListResolver,
+      LoginService,
+      CheckLoginGuard,
+      CheckSaveFormGuard
    ],
    bootstrap: [
       AppComponent
